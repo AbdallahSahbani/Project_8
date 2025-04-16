@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Abdallah_Sahbani_IA_4.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Abdallah_Sahbani_IA_4.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Ask user to input the their monthly spending budget</span>
+<span class="s0"># input:Gets user input as a string ,float Converts the string input to a floating-point number.</span>
+<span class="s0"># budget:Stores the numeric value of the user's budget for later use</span>
+<span class="s0"># main() allows for program entry</span>
+<span class="s2">def </span><span class="s1">main</span><span class="s3">():</span>
+    <span class="s1">budget </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Enter the amount you have budgeted for the month: $&quot;</span><span class="s3">))</span>
+
+    <span class="s0"># budget_difference(): This is the function call</span>
+    <span class="s1">total_expenses </span><span class="s3">= </span><span class="s1">budget_difference</span><span class="s3">()</span>
+
+    <span class="s0"># orders the function to convert the status of the budget to an output</span>
+    <span class="s1">budget_status</span><span class="s3">(</span><span class="s1">budget</span><span class="s3">, </span><span class="s1">total_expenses</span><span class="s3">)</span>
+
+
+<span class="s0"># def defines the function then calculates the budget difference</span>
+<span class="s2">def </span><span class="s1">budget_difference</span><span class="s3">():</span>
+    <span class="s0"># Initialize the  collector for total expenses</span>
+    <span class="s1">total_expenses </span><span class="s3">= </span><span class="s5">0</span>
+
+    <span class="s0"># Initialize the expense variable with any non-zero value to engage the loop</span>
+    <span class="s1">expense </span><span class="s3">= -</span><span class="s5">1  </span><span class="s0"># Any non-zero value to engage the loop</span>
+
+    <span class="s0"># Start the loop for entering expenses</span>
+    <span class="s2">while </span><span class="s1">expense </span><span class="s3">!= </span><span class="s5">0</span><span class="s3">:</span>
+        <span class="s0"># Prompt the user for the next expense then format float</span>
+        <span class="s1">expense </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Enter an expense (enter 0 to stop): $&quot;</span><span class="s3">))</span>
+
+        <span class="s0"># If adds the expense to the total if it's not zero</span>
+        <span class="s2">if </span><span class="s1">expense </span><span class="s3">!= </span><span class="s5">0</span><span class="s3">:</span>
+            <span class="s1">total_expenses </span><span class="s3">+= </span><span class="s1">expense</span>
+
+    <span class="s0"># Return the total expenses gives the output after formulating all expenses</span>
+    <span class="s2">return </span><span class="s1">total_expenses</span>
+
+
+<span class="s0"># Define the function to display the budget status</span>
+<span class="s2">def </span><span class="s1">budget_status</span><span class="s3">(</span><span class="s1">budget</span><span class="s3">, </span><span class="s1">total_expenses</span><span class="s3">):</span>
+    <span class="s0"># Calculate the difference between the budget and total expenses</span>
+    <span class="s1">difference </span><span class="s3">= </span><span class="s1">budget </span><span class="s3">- </span><span class="s1">total_expenses</span>
+     <span class="s0"># The ':,.2f' ensures the value is displayed with commas</span>
+    <span class="s0"># If the difference is positive, it means the user is under budget</span>
+    <span class="s2">if </span><span class="s1">difference </span><span class="s3">&gt; </span><span class="s5">0</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;You are under budget by $</span><span class="s2">{</span><span class="s1">difference</span><span class="s2">:</span><span class="s4">,.2f</span><span class="s2">}</span><span class="s4">. Well done!&quot;</span><span class="s3">)</span>
+    <span class="s0"># If the difference is negative, it means the user is over budget</span>
+    <span class="s2">elif </span><span class="s1">difference </span><span class="s3">&lt; </span><span class="s5">0</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;You are over budget by $</span><span class="s2">{</span><span class="s1">abs</span><span class="s3">(</span><span class="s1">difference</span><span class="s3">)</span><span class="s2">:</span><span class="s4">,.2f</span><span class="s2">}</span><span class="s4">. Control your impulsive spending!&quot;</span><span class="s3">)</span>
+    <span class="s0"># If the difference is zero, the user is exactly on budget</span>
+    <span class="s2">else</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;You are on budget. Good planning!&quot;</span><span class="s3">)</span>
+<span class="s0"># Call the main function to  restart the program</span>
+<span class="s1">main</span><span class="s3">()</span>
+
+</pre>
+</body>
+</html>
