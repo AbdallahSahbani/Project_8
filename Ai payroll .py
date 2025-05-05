@@ -7,8 +7,7 @@ from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext
-
-client = OpenAI(api_key="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")
+g2AuppG1K_qXHv5y_TXAeKvs0A")
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def read_files_from_directory(directory_path):
